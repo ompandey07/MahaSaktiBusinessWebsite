@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahalami Lubricants Pvt Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-slider {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <!-- Top bar -->
+        <div class="bg-blue-500 text-white py-2 px-4">
+            <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone text-xs"></i>
+                        <span>+977-1-5379380, 5371539, 9801148256</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <span class="font-semibold">Mahalami Lubricants Pvt Ltd</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope text-xs"></i>
+                    <span>INFO@MAHALAMILUBRICANTS.NET</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-blue-500 hover:text-blue-600 font-medium flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>HOME</span>
+                    </a>
+                    <a href="AboutUs.html" class="text-gray-700 hover:text-blue-500 font-medium flex items-center space-x-2">
+                        <i class="fas fa-info-circle"></i>
+                        <span>ABOUT US</span>
+                    </a>
+                </div>
+                
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&w=80&h=80&fit=crop&crop=center" 
+                             alt="Mahalami Lubricants Logo" 
+                             class="w-16 h-16 rounded-full object-cover mx-auto">
+                        <div class="w-16 h-1 bg-blue-500 mx-auto mt-1"></div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <a href="OurProduct.html" class="text-gray-700 hover:text-blue-500 font-medium flex items-center space-x-2">
+                        <i class="fas fa-boxes"></i>
+                        <span>OUR PRODUCTS</span>
+                    </a>
+                    <a href="ContactUs.html" class="text-gray-700 hover:text-blue-500 font-medium flex items-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>CONTACT US</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen overflow-hidden hero-slider" id="heroSlider">
+        <!-- Background Images (will be changed via JavaScript) -->
+        <div class="absolute inset-0">
+            <img id="heroImage" 
+                 src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Laboratory Equipment" 
+                 class="w-full h-full object-cover transition-opacity duration-1000">
+        </div>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        
+        <!-- Navigation arrows -->
+        <button onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl hover:text-blue-300 transition-colors z-10">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl hover:text-blue-300 transition-colors z-10">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Content -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+                Welcome To Mahalami Lubricants Pvt Ltd
+            </h1>
+            
+            <!-- Decorative element -->
+            <div class="flex items-center mb-8">
+                <div class="w-32 h-0.5 bg-blue-400"></div>
+                <i class="fas fa-flask text-blue-400 text-xl mx-4"></i>
+                <div class="w-32 h-0.5 bg-blue-400"></div>
+            </div>
+        </div>
+        
+        <!-- Slide indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <div class="w-3 h-3 rounded-full bg-white cursor-pointer" onclick="goToSlide(0)"></div>
+            <div class="w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer" onclick="goToSlide(1)"></div>
+            <div class="w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer" onclick="goToSlide(2)"></div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="About Mahalami Lubricants" 
+                         class="w-full h-96 object-cover rounded-lg shadow-lg">
+                </div>
+                
+                <!-- Content -->
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">About Mahalami Lubricants</h2>
+                    <div class="w-20 h-1 bg-blue-500 mb-6"></div>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Mahalami Lubricants Pvt Ltd has been a trusted name in the lubricants industry for over two decades. 
+                        We specialize in providing high-quality lubricants and industrial solutions to meet the diverse needs 
+                        of our clients across Nepal.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Our commitment to excellence and innovation has made us a leading provider of premium lubricants, 
+                        ensuring optimal performance and reliability for all your industrial and automotive needs.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 text-blue-500">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="font-medium">Quality Assured</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-blue-500">
+                            <i class="fas fa-award"></i>
+                            <span class="font-medium">20+ Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Description Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Mahalami Lubricants Pvt Ltd started with an aim of providing premium lubricant solutions to various industries in Nepal more 
+                    than 2 decades ago. Since then we have been representing various international brands. We have become the one 
+                    stop solution for a lot of Industries in Nepal. We have various brands under one roof where customers can 
+                    basically cater to all their needs for industrial and automotive lubrication. From Engine oils to Hydraulic fluids to Specialty lubricants, we provide comprehensive solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Products Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Our Products</h2>
+            <div class="w-20 h-1 bg-blue-500 mb-12 mx-auto"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1616436461088-2a8f4a8c4763?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Engine Oil" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Engine Oils</h3>
+                        <p class="text-gray-600">High-performance engine oils designed for optimal engine protection and efficiency across various vehicle types.</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1600585152915-18c7e6b2d29c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Hydraulic Fluids" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Hydraulic Fluids</h3>
+                        <p class="text-gray-600">Premium hydraulic fluids ensuring smooth operation and longevity for industrial machinery.</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1621446215599-4b0e8c373b05 Reinforced Lubricants?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Specialty Lubricants" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Specialty Lubricants</h3>
+                        <p class="text-gray-600">Tailored lubricants for specialized industrial applications, ensuring peak performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="w-20 h-1 bg-blue-500 mb-12 mx-auto"></div>
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-2"></i>
+                        What types of lubricants do you offer?
+                    </h3>
+                    <p class="text-gray-600">We offer a wide range of lubricants, including engine oils, hydraulic fluids, gear oils, and specialty lubricants tailored for industrial and automotive applications.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-2"></i>
+                        How can I choose the right lubricant for my machinery?
+                    </h3>
+                    <p class="text-gray-600">Our team of experts can assist you in selecting the appropriate lubricant based on your machinery’s specifications and operating conditions. Contact us for personalized recommendations.</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-question-circle text-blue-500 mr-2"></i>
+                        Do you provide delivery services across Nepal?
+                    </h3>
+                    <p class="text-gray-600">Yes, we offer reliable delivery services across Nepal to ensure our products reach you promptly and efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Mahalami Lubricants Pvt Ltd</h3>
+                    <p class="text-gray-300">Providing premium lubricant solutions for over 20 years across Nepal.</p>
+                    <div class="mt-4 flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">Our Products</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+977-1-5379380, 5371539</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>9801148256</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@mahalamilubricants.net</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-600 text-center">
+                <p>&copy; 2025 Mahalami Lubricants Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero slider functionality
+        const heroImages = [
+            'https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+            'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+            'https://images.unsplash.com/photo-1581092160562-40a7f8b73d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+        ];
+        
+        let currentSlide = 0;
+        const heroImage = document.getElementById('heroImage');
+        const indicators = document.querySelectorAll('.absolute.bottom-8 div');
+        
+        function updateSlide(index) {
+            currentSlide = index;
+            heroImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                heroImage.src = heroImages[currentSlide];
+                heroImage.style.opacity = '1';
+            }, 300);
+            
+            // Update indicators
+            indicators.forEach((indicator, i) => {
+                if (i === currentSlide) {
+                    indicator.className = 'w-3 h-3 rounded-full bg-white cursor-pointer';
+                } else {
+                    indicator.className = 'w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer';
+                }
+            });
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % heroImages.length;
+            updateSlide(next);
+        }
+        
+        function previousSlide() {
+            const prev = (currentSlide - 1 + heroImages.length) % heroImages.length;
+            updateSlide(prev);
+        }
+        
+        function goToSlide(index) {
+            updateSlide(index);
+        }
+        
+        // Auto-slide functionality
+        setInterval(nextSlide, 5000);
+
+        // Add some interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple fade-in animation for the hero content
+            const heroContent = document.querySelector('.absolute.inset-0.flex');
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                heroContent.style.transition = 'opacity 1s ease-in-out, transform 1s ease-in-out';
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Add hover effects to navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
