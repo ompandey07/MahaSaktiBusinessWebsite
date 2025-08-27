@@ -3,50 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahalami Lubricants Pvt Ltd</title>
+    <title>Mahashakti Lubricants Private Limited</title>
+    <link rel="shortcut icon" href="Images/Logo/Logo.jpg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .hero-slider {
             background-size: cover;
             background-position: center;
-            transition: background-image 1s ease-in-out;
+            transition: background-image 1.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        /* Custom Scrollbar */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gallery-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-item:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
+            background: #f1f5f9;
         }
         ::-webkit-scrollbar-thumb {
-            background: #4b5563;
-            border-radius: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #374151;
+            background: linear-gradient(to bottom, #1d4ed8, #1e40af);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .floating-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
-<body class="font-sans">
+<body class="font-sans smooth-scroll">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-lg fixed w-full z-50 transition-all duration-300" id="header">
         <!-- Top bar -->
-        <div class="bg-blue-500 text-white py-2 px-4">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-4">
             <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-6">
                     <div class="flex items-center space-x-2">
-                        <i class="fas fa-phone text-xs"></i>
-                        <span>+977-1-5379380, 5371539, 9801148256</span>
+                        <i class="fas fa-phone text-xs animate-pulse"></i>
+                        <span>+977 980-9165780</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-user text-xs"></i>
+                        <span>Gopal Pandey</span>
                     </div>
                 </div>
-                <div class="text-center">
-                    <span class="font-semibold">Mahalami Lubricants Pvt Ltd</span>
-                </div>
+               
                 <div class="flex items-center space-x-2">
-                    <i class="fas fa-envelope text-xs"></i>
-                    <span>INFO@MAHALAMILUBRICANTS.NET</span>
+                    <i class="fas fa-map-marker-alt text-xs"></i>
+                    <span>Narayangarh, Chitwan</span>
                 </div>
             </div>
         </div>
@@ -55,32 +109,32 @@
         <nav class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-8">
-                    <a href="index.html" class="text-blue-500 hover:text-blue-600 font-medium flex items-center space-x-2">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-700 font-semibold flex items-center space-x-2 transform hover:scale-105 transition-all">
                         <i class="fas fa-home"></i>
                         <span>HOME</span>
                     </a>
-                    <a href="AboutUs.html" class="text-gray-700 hover:text-blue-500 font-medium flex items-center space-x-2">
+                    <a href="AboutUs.html" class="text-gray-700 hover:text-blue-600 font-semibold flex items-center space-x-2 transform hover:scale-105 transition-all">
                         <i class="fas fa-info-circle"></i>
                         <span>ABOUT US</span>
                     </a>
                 </div>
                 
                 <!-- Logo -->
-                <div class="flex items-center">
+                <div class="flex items-center floating-animation">
                     <div class="text-center">
-                        <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&w=80&h=80&fit=crop&crop=center" 
-                             alt="Mahalami Lubricants Logo" 
-                             class="w-16 h-16 rounded-full object-cover mx-auto">
-                        <div class="w-16 h-1 bg-blue-500 mx-auto mt-1"></div>
+                        <img src="Images/Logo/Logo.jpg" 
+                             alt="Mahashakti Lubricants Logo" 
+                             class="w-20 h-20 object-cover mx-auto shadow-lg border-4 border-blue-500">
+                        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2"></div>
                     </div>
                 </div>
                 
                 <div class="flex items-center space-x-8">
-                    <a href="OurProduct.html" class="text-gray-700 hover:text-blue-500 font-medium flex items-center space-x-2">
+                    <a href="OurProduct.html" class="text-gray-700 hover:text-blue-600 font-semibold flex items-center space-x-2 transform hover:scale-105 transition-all">
                         <i class="fas fa-boxes"></i>
                         <span>OUR PRODUCTS</span>
                     </a>
-                    <a href="ContactUs.html" class="text-gray-700 hover:text-blue-500 font-medium flex items-center space-x-2">
+                    <a href="ContactUs.html" class="text-gray-700 hover:text-blue-600 font-semibold flex items-center space-x-2 transform hover:scale-105 transition-all">
                         <i class="fas fa-phone"></i>
                         <span>CONTACT US</span>
                     </a>
@@ -90,80 +144,103 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-screen overflow-hidden hero-slider" id="heroSlider">
-        <!-- Background Images (will be changed via JavaScript) -->
+    <section class="relative h-screen overflow-hidden hero-slider" id="home">
+        <!-- Background Images -->
         <div class="absolute inset-0">
             <img id="heroImage" 
-                 src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                 alt="Laboratory Equipment" 
+                 src="Images/Poster1.jpg" 
+                 alt="Industrial Lubricants" 
                  class="w-full h-full object-cover transition-opacity duration-1000">
         </div>
         
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         
         <!-- Navigation arrows -->
-        <button onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl hover:text-blue-300 transition-colors z-10">
+        <button onclick="previousSlide()" class="absolute left-6 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-blue-300 hover:scale-110 transition-all z-10 bg-black/20 p-3">
             <i class="fas fa-chevron-left"></i>
         </button>
-        <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl hover:text-blue-300 transition-colors z-10">
+        <button onclick="nextSlide()" class="absolute right-6 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-blue-300 hover:scale-110 transition-all z-10 bg-black/20 p-3">
             <i class="fas fa-chevron-right"></i>
         </button>
         
         <!-- Content -->
         <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-                Welcome To Mahalami Lubricants Pvt Ltd
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in">
+                Welcome To <span class="gradient-text bg-white">Mahashakti</span> Lubricants
             </h1>
+            <p class="text-xl md:text-2xl mb-8 fade-in max-w-4xl">
+                Premium Trading & Packaging Solutions for Lubricants, Grease Items & Furnace Oils
+            </p>
             
             <!-- Decorative element -->
-            <div class="flex items-center mb-8">
-                <div class="w-32 h-0.5 bg-blue-400"></div>
-                <i class="fas fa-flask text-blue-400 text-xl mx-4"></i>
-                <div class="w-32 h-0.5 bg-blue-400"></div>
+            <div class="flex items-center mb-8 fade-in">
+                <div class="w-32 h-0.5 bg-gradient-to-r from-transparent to-blue-400"></div>
+                <i class="fas fa-industry text-blue-400 text-2xl mx-6 floating-animation"></i>
+                <div class="w-32 h-0.5 bg-gradient-to-l from-transparent to-blue-400"></div>
+            </div>
+            
+            <div class="flex space-x-4 fade-in">
+                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" 
+                        class="bg-blue-600 hover:bg-blue-700 px-8 py-3 font-semibold transform hover:scale-105 transition-all shadow-lg">
+                    Learn More
+                </button>
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" 
+                        class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 font-semibold transform hover:scale-105 transition-all">
+                    Contact Us
+                </button>
             </div>
         </div>
         
         <!-- Slide indicators -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            <div class="w-3 h-3 rounded-full bg-white cursor-pointer" onclick="goToSlide(0)"></div>
-            <div class="w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer" onclick="goToSlide(1)"></div>
-            <div class="w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer" onclick="goToSlide(2)"></div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <div class="w-4 h-4 bg-white cursor-pointer shadow-lg" onclick="goToSlide(0)"></div>
+            <div class="w-4 h-4 bg-white/50 cursor-pointer shadow-lg" onclick="goToSlide(1)"></div>
+            <div class="w-4 h-4 bg-white/50 cursor-pointer shadow-lg" onclick="goToSlide(2)"></div>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="about">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Image -->
-                <div class="order-2 lg:order-1">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="About Mahalami Lubricants" 
-                         class="w-full h-96 object-cover rounded-lg shadow-lg">
+                <div class="order-2 lg:order-1 fade-in">
+                    <img src="Images/Furnesh.jpg" 
+                         alt="About Maha Shakti Lubricants" 
+                         class="w-full h-96 object-cover shadow-2xl transform hover:scale-105 transition-all duration-500">
                 </div>
                 
                 <!-- Content -->
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-4xl font-bold text-gray-800 mb-6">About Mahalami Lubricants</h2>
-                    <div class="w-20 h-1 bg-blue-500 mb-6"></div>
+                <div class="order-1 lg:order-2 fade-in">
+                    <h2 class="text-5xl font-bold text-gray-800 mb-6">About Mahashakti Lubricants</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mb-8"></div>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        Mahalami Lubricants Pvt Ltd has been a trusted name in the lubricants industry for over two decades. 
-                        We specialize in providing high-quality lubricants and industrial solutions to meet the diverse needs 
-                        of our clients across Nepal.
+                        Mahashakti Lubricants Private Limited is a premier name in the lubricants industry, specializing in both 
+                        <span class="font-semibold text-blue-600">trading and packaging solutions</span>. We provide comprehensive 
+                        services for lubricants, grease items, and furnace oils across Nepal and beyond.
                     </p>
                     <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        Our commitment to excellence and innovation has made us a leading provider of premium lubricants, 
-                        ensuring optimal performance and reliability for all your industrial and automotive needs.
+                        Our expertise in <span class="font-semibold text-blue-600">import and supply operations</span> from 
+                        international markets, including Alkatra, ensures that we deliver only the finest quality products 
+                        to meet diverse industrial needs.
                     </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center space-x-2 text-blue-500">
-                            <i class="fas fa-check-circle"></i>
-                            <span class="font-medium">Quality Assured</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3 p-3 bg-blue-50">
+                            <i class="fas fa-check-circle text-blue-500 text-xl"></i>
+                            <span class="font-medium text-gray-700">Trading Excellence</span>
                         </div>
-                        <div class="flex items-center space-x-2 text-blue-500">
-                            <i class="fas fa-award"></i>
-                            <span class="font-medium">20+ Years Experience</span>
+                        <div class="flex items-center space-x-3 p-3 bg-blue-50">
+                            <i class="fas fa-box text-blue-500 text-xl"></i>
+                            <span class="font-medium text-gray-700">Packaging Solutions</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-blue-50">
+                            <i class="fas fa-globe text-blue-500 text-xl"></i>
+                            <span class="font-medium text-gray-700">Import & Supply</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-blue-50">
+                            <i class="fas fa-award text-blue-500 text-xl"></i>
+                            <span class="font-medium text-gray-700">Quality Assured</span>
                         </div>
                     </div>
                 </div>
@@ -172,147 +249,261 @@
     </section>
 
     <!-- Company Description Section -->
-    <section class="bg-gray-50 py-16">
+    <section class="bg-gradient-to-r from-blue-600 to-blue-700 py-16 text-white">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto">
-                <p class="text-gray-700 text-lg leading-relaxed">
-                    Mahalami Lubricants Pvt Ltd started with an aim of providing premium lubricant solutions to various industries in Nepal more 
-                    than 2 decades ago. Since then we have been representing various international brands. We have become the one 
-                    stop solution for a lot of Industries in Nepal. We have various brands under one roof where customers can 
-                    basically cater to all their needs for industrial and automotive lubrication. From Engine oils to Hydraulic fluids to Specialty lubricants, we provide comprehensive solutions.
+            <div class="max-w-4xl mx-auto fade-in">
+                <h3 class="text-3xl font-bold mb-6">Our Mission & Vision</h3>
+                <p class="text-xl leading-relaxed mb-8">
+                    Mahashakti Lubricants started with the vision of becoming Nepal's leading provider of premium lubricant 
+                    solutions. Through our comprehensive trading and packaging services, we serve as a complete solution 
+                    provider for industries across the region.
+                </p>
+                <p class="text-lg leading-relaxed opacity-90">
+                    From high-grade engine oils to specialized hydraulic fluids and furnace oils, we ensure that every 
+                    product meets international standards while being accessible to local markets.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Our Products Section -->
-    <section class="py-16 bg-white">
+    <!-- Products Section -->
+    <section class="py-20 bg-white" id="products">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Our Products</h2>
-            <div class="w-20 h-1 bg-blue-500 mb-12 mx-auto"></div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6 text-center fade-in">Our Premium Products</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mb-16 mx-auto fade-in"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Product 1 -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://images.unsplash.com/photo-1616436461088-2a8f4a8c4763?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Engine Oil" 
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Engine Oils</h3>
-                        <p class="text-gray-600">High-performance engine oils designed for optimal engine protection and efficiency across various vehicle types.</p>
-                    </div>
+                <div class="gallery-item relative overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-500 fade-in">
+                    <img src="Images/Products/1.png" 
+                         alt="Premium Lubricants" 
+                         class="w-full h-64 object-cover">
                 </div>
+                
                 <!-- Product 2 -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://images.unsplash.com/photo-1600585152915-18c7e6b2d29c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Hydraulic Fluids" 
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Hydraulic Fluids</h3>
-                        <p class="text-gray-600">Premium hydraulic fluids ensuring smooth operation and longevity for industrial machinery.</p>
-                    </div>
+                <div class="gallery-item relative overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-500 fade-in">
+                    <img src="Images/Products/2.png" 
+                         alt="Grease Items" 
+                         class="w-full h-64 object-cover">
                 </div>
+                
                 <!-- Product 3 -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <img src="https://images.unsplash.com/photo-1621446215599-4b0e8c373b05 Reinforced Lubricants?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Specialty Lubricants" 
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Specialty Lubricants</h3>
-                        <p class="text-gray-600">Tailored lubricants for specialized industrial applications, ensuring peak performance.</p>
-                    </div>
+                <div class="gallery-item relative overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-500 fade-in">
+                    <img src="Images/Products/3.png" 
+                         alt="Furnace Oils" 
+                         class="w-full h-64 object-cover">
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="gallery-item relative overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-500 fade-in">
+                    <img src="Images/Products/4.png" 
+                         alt="Import & Supply" 
+                         class="w-full h-64 object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Frequently Asked Questions Section -->
-    <section class="py-16 bg-gray-50">
+
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Frequently Asked Questions</h2>
-            <div class="w-20 h-1 bg-blue-500 mb-12 mx-auto"></div>
-            <div class="space-y-6">
-                <!-- FAQ 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
-                        <i class="fas fa-question-circle text-blue-500 mr-2"></i>
-                        What types of lubricants do you offer?
-                    </h3>
-                    <p class="text-gray-600">We offer a wide range of lubricants, including engine oils, hydraulic fluids, gear oils, and specialty lubricants tailored for industrial and automotive applications.</p>
+            <h2 class="text-5xl font-bold text-gray-800 mb-6 text-center fade-in">Working Snapshots</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mb-16 mx-auto fade-in"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item overflow-hidden">
+                    <img src="Images/Journey/1.jpeg" 
+                         alt="Company Foundation" class="w-full h-64 object-cover">
                 </div>
-                <!-- FAQ 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
-                        <i class="fas fa-question-circle text-blue-500 mr-2"></i>
-                        How can I choose the right lubricant for my machinery?
-                    </h3>
-                    <p class="text-gray-600">Our team of experts can assist you in selecting the appropriate lubricant based on your machinery’s specifications and operating conditions. Contact us for personalized recommendations.</p>
+                <div class="gallery-item overflow-hidden">
+                    <img src="Images/Journey/2.jpeg" 
+                         alt="Expansion Phase" class="w-full h-64 object-cover">
                 </div>
-                <!-- FAQ 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2 flex items-center">
-                        <i class="fas fa-question-circle text-blue-500 mr-2"></i>
-                        Do you provide delivery services across Nepal?
-                    </h3>
-                    <p class="text-gray-600">Yes, we offer reliable delivery services across Nepal to ensure our products reach you promptly and efficiently.</p>
+                <div class="gallery-item overflow-hidden">
+                    <img src="Images/Journey/3.jpeg" 
+                         alt="Import Operations" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden">
+                    <img src="Images/Journey/4.jpeg" 
+                         alt="Current Operations" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden">
+                    <img src="Images/Journey/5.jpeg" 
+                         alt="Quality Control" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item overflow-hidden">
+                    <img src="Images/Journey/6.jpeg" 
+                         alt="Storage Facility" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jay Laxmi Narayan Trading Section -->
+    <section class="py-20 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl font-bold mb-6">We Are Also Known As</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto rounded-full mb-8"></div>
+                <h3 class="text-4xl font-bold gradient-text bg-white">Jay Laxmi Narayan Trading</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="fade-in">
+                    <h4 class="text-3xl font-bold mb-6">Our Second Firm Specialization</h4>
+                    <p class="text-xl leading-relaxed mb-8 opacity-90">
+                       Under the name Jay Laxmi Narayan Trading, we operate our specialized division in Greece, providing comprehensive solutions for the automotive and heavy vehicle industry. Our offerings include high-quality lubricants, genuine spare parts, and reliable support for motor vehicles and heavy machinery.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 text-center">
+                            <i class="fas fa-tint text-4xl text-blue-400 mb-4"></i>
+                            <h5 class="font-bold mb-2">Grease</h5>
+                            <p class="text-sm opacity-80">Premium automotive grease products</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-6 text-center">
+                            <i class="fas fa-oil-can text-4xl text-green-400 mb-4"></i>
+                            <h5 class="font-bold mb-2">Lubricants</h5>
+                            <p class="text-sm opacity-80">Specialized vehicle lubricants</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-6 text-center">
+                            <i class="fas fa-cog text-4xl text-orange-400 mb-4"></i>
+                            <h5 class="font-bold mb-2">Spare Parts</h5>
+                            <p class="text-sm opacity-80">Motor & heavy vehicle parts</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="fade-in">
+                    <img src="Images/Laxmi.jpg" 
+                         alt="Jay Laxmi Narayan Trading" 
+                         class="w-full h-96 object-cover shadow-2xl">
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center fade-in">
+                <p class="text-lg opacity-90 max-w-4xl mx-auto">
+                    Jay Laxmi Narayan Trading serves as our dedicated channel for motor vehicle and heavy vehicle spare parts, 
+                    alongside our complete range of grease and lubricant products, ensuring comprehensive support for the 
+                    transportation and logistics industry.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="contact">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6 text-center fade-in">Get In Touch</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mb-16 mx-auto rounded-full fade-in"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Contact Info Cards -->
+                <div class="bg-white shadow-xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 bg-blue-100 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Phone & Contact</h3>
+                    <p class="text-gray-600 mb-2">Gopal Pandey</p>
+                    <p class="text-gray-600">+977 980-9165780</p>
+                </div>
+                
+                <div class="bg-white shadow-xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 bg-green-100 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-building text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Head Office</h3>
+                    <p class="text-gray-600">Narayangarh, Chitwan</p>
+                </div>
+                
+                <div class="bg-white shadow-xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 bg-red-100 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-industry text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Factory Address</h3>
+                    <p class="text-gray-600">Khairahani-01, Chitwan</p>
+                </div>
+                
+                <div class="bg-white shadow-xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 bg-purple-100 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Service Area</h3>
+                    <p class="text-gray-600">Nepal & International</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Company Info -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Mahalami Lubricants Pvt Ltd</h3>
-                    <p class="text-gray-300">Providing premium lubricant solutions for over 20 years across Nepal.</p>
-                    <div class="mt-4 flex items-center space-x-2">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Kathmandu, Nepal</span>
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text bg-white">Mahashakti Lubricants Private Limited</h3>
+                    <p class="text-gray-300 mb-4">Premier provider of lubricant trading and packaging solutions for over two decades across Nepal and international markets.</p>
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fas fa-map-marker-alt text-blue-400"></i>
+                        <span>Head Office: Narayangarh, Chitwan</span>
+                    </div>
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fas fa-industry text-blue-400"></i>
+                        <span>Factory: Khairahani-01, Chitwan</span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-lg font-semibold text-blue-300">Also Known As:</p>
+                        <p class="text-gray-300">Jay Laxmi Narayan Trading</p>
                     </div>
                 </div>
+                
                 <!-- Quick Links -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-300 transition-colors">Home</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition-colors">Our Products</a></li>
-                        <li><a href="#" class="hover:text-blue-300 transition-colors">Contact Us</a></li>
+                        <li><a href="#home" class="hover:text-blue-300 transition-colors transform hover:translate-x-2">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-300 transition-colors transform hover:translate-x-2">About Us</a></li>
+                        <li><a href="#products" class="hover:text-blue-300 transition-colors transform hover:translate-x-2">Our Products</a></li>
+                        <li><a href="#contact" class="hover:text-blue-300 transition-colors transform hover:translate-x-2">Contact Us</a></li>
                     </ul>
                 </div>
+                
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                    <div class="space-y-2">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-3">
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-phone"></i>
-                            <span>+977-1-5379380, 5371539</span>
+                            <i class="fas fa-user text-blue-400"></i>
+                            <span>Gopal Pandey</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>9801148256</span>
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <span>+977 980-9165780</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@mahalamilubricants.net</span>
+                            <i class="fas fa-building text-blue-400"></i>
+                            <span>Narayangarh, Chitwan</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-600 text-center">
-                <p>&copy; 2025 Mahalami Lubricants Pvt Ltd. All rights reserved.</p>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">&copy; 2025 Mahashakti Lubricants Private Limited. All rights reserved.</p>
+                <p class="text-sm text-gray-500 mt-2">Trading & Packaging Solutions | Import & Supply Services</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Hero slider functionality
+        // Hero slider functionality with smooth transitions
         const heroImages = [
-            'https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-            'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-            'https://images.unsplash.com/photo-1581092160562-40a7f8b73d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+            'Images/Poster1.jpg',
+            'Images/Poster2.jpg',
+            'Images/Poster3.jpg'
         ];
         
         let currentSlide = 0;
@@ -321,19 +512,19 @@
         
         function updateSlide(index) {
             currentSlide = index;
-            heroImage.style.opacity = '0';
+            heroImage.style.opacity = '0.3';
             
             setTimeout(() => {
                 heroImage.src = heroImages[currentSlide];
                 heroImage.style.opacity = '1';
-            }, 300);
+            }, 500);
             
-            // Update indicators
+            // Update indicators with smooth animation
             indicators.forEach((indicator, i) => {
                 if (i === currentSlide) {
-                    indicator.className = 'w-3 h-3 rounded-full bg-white cursor-pointer';
+                    indicator.className = 'w-4 h-4 bg-white cursor-pointer shadow-lg transform scale-110';
                 } else {
-                    indicator.className = 'w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer';
+                    indicator.className = 'w-4 h-4 bg-white/50 cursor-pointer shadow-lg transform scale-100';
                 }
             });
         }
@@ -352,33 +543,70 @@
             updateSlide(index);
         }
         
-        // Auto-slide functionality
-        setInterval(nextSlide, 5000);
+        // Auto-slide with longer interval for better UX
+        setInterval(nextSlide, 6000);
 
-        // Add some interactive functionality
+        // Smooth scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Simple fade-in animation for the hero content
-            const heroContent = document.querySelector('.absolute.inset-0.flex');
-            heroContent.style.opacity = '0';
-            heroContent.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                heroContent.style.transition = 'opacity 1s ease-in-out, transform 1s ease-in-out';
-                heroContent.style.opacity = '1';
-                heroContent.style.transform = 'translateY(0)';
-            }, 100);
+            // Initialize animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
 
-            // Add hover effects to navigation links
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-2px)';
-                    this.style.transition = 'transform 0.2s ease';
-                });
-                link.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('bg-white/95', 'backdrop-blur-sm');
+                } else {
+                    header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+                }
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 });
             });
+
+            // Gallery hover effects
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) translateY(-10px)';
+                    this.style.zIndex = '10';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) translateY(0)';
+                    this.style.zIndex = '1';
+                });
+            });
+
+            // Add loading animation
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
         });
     </script>
 </body>
